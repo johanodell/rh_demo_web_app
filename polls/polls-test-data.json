@@ -1,0 +1,81 @@
+[
+{
+  "model": "polls.question",
+  "pk": 1,
+  "fields": {
+    "question_text": "What did you think of the location ?",
+    "pub_date": "2019-09-09T03:41:49Z"
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 2,
+  "fields": {
+    "question_text": "How did you hear about this event?",
+    "pub_date": "2019-09-09T03:44:03Z"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 1,
+  "fields": {
+    "question": 1,
+    "choice_text": "I liked the location",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 2,
+  "fields": {
+    "question": 1,
+    "choice_text": "Location does not matter to me",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 3,
+  "fields": {
+    "question": 1,
+    "choice_text": "Other",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 4,
+  "fields": {
+    "question": 2,
+    "choice_text": "Red Hat Invite",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 5,
+  "fields": {
+    "question": 2,
+    "choice_text": "Email from a Red Hat Employee",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 6,
+  "fields": {
+    "question": 2,
+    "choice_text": "Call from a Red Hat Employee",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 7,
+  "fields": {
+    "question": 2,
+    "choice_text": "Other",
+    "votes": 0
+  }
+}
+]
