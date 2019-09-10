@@ -7,6 +7,7 @@ from django.views import generic
 from django.utils import timezone
 
 from .models import Choice, Question
+import socket
 
 
 class IndexView(generic.ListView):

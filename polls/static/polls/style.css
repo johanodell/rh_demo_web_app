@@ -1,3 +1,46 @@
-li a {
-    color: green;
+.page-header {
+    background-color: #000;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 
+        [viewport-start] minmax(1em, 1fr)
+        [container-start] minmax(0, 30em) [container-end]
+        minmax(1em, 1fr) [viewport-end];
+}
+.item--contained {
+    grid-column: container;
+}
+.item--full { 
+    grid-column: viewport; 
+    display: inherit;
+    grid-template-columns: inherit;
+}
+.item--full > * {
+    grid-column: container;
+}
+
+.blockquote {
+    padding: 2em 0;
+    color: #fff;
+    background: #82cac4;
+}
+
+.hostname {
+    font-size: 24pt;
 }

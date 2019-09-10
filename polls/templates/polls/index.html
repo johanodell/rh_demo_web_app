@@ -1,12 +1,32 @@
 {% load static %}
+{% load custom_tags %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<html>
+    <head>
+        <title>RH Demo App</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>RH Demo Application</h1>
+        </div>
+        <div class="grid">
+            <div class="item item--contained">
+            {% if latest_question_list %}
+                <ul>
+                {% for question in latest_question_list %}
+                    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No polls are available.</p>
+            {% endif %}
+            </div>
+            <div class="item item--full blockquote">
+                <p class="hostname">Hostname: {% get_hostname %}</p>
+            </div>
+        </div>
+    </body>
+</html>
