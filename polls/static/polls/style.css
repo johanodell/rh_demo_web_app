@@ -1,5 +1,6 @@
 .page-header {
-    background-color: #181818;
+    background-color: #fff;
+    opacity: 0.0;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -11,11 +12,6 @@
 }
 
 body {
-    background: #000;
-
-}
-
-.img-bg{
     background-image: url('images/Ansible-Fest-Row-Background.png');
     background-size: cover;
     height: 750px;
