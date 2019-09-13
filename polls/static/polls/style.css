@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #000;
+    background-color: #181818;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -50,6 +50,19 @@ h1, h2, h3, h4 {
 }
 
 .blockquote {
+    margin-top: 25px;
+    padding: 2em 0;
+    color: #fff;
+    background: #28a745;
+    opacity: 0.7;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 20px;
+    text-align: center
+}
+
+.blockquote-poll {
+    margin-top: 25px;
     padding: 2em 0;
     color: #fff;
     background: #000;
@@ -57,7 +70,6 @@ h1, h2, h3, h4 {
     border-radius: 5px;
     display: inline-block;
     padding: 20px;
-    text-align: center
 }
 
 .hostname {

@@ -3,22 +3,32 @@
 
 <html>
     <head>
-        <title>RH Demo App</title>
+        <title>Automation for everyone</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
         <script src="https://kit.fontawesome.com/acf222f1ae.js"></script>
     </head>
     <body>
         <div class="page-header">
-            <h1>RH Demo Application</h1>
+            <h2>Automation for everyone</h2>
         </div>
         <div class="img-bg">
             <div class="grid">
-                <div class="item item--contained">
+                <div class="item item--contained blockquote-poll">
                 {% if latest_question_list %}
                     <ul>
                     {% for question in latest_question_list %}
-                        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+                        <p>{{ question.question_text }}</p>
+                        <form action="{% url 'polls:vote' question.id %}" method="post">
+                        <div class="form-group">
+                        {% csrf_token %}
+                        {% for choice in question.choice_set.all %}
+                            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+                        {% endfor %}
+                        <input type="submit" class="btn btn-primary" value="Vote">
+                        </div>
+                        </form>
                     {% endfor %}
                     </ul>
                 {% else %}
