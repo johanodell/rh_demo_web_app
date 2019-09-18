@@ -7,7 +7,7 @@ if(FULL_BUILD) {
     stage('Unit Tests') {
         node {
             echo 'Unit Tests'
-            sleep(45)
+            sleep(5)
         }
     }
 }
@@ -17,6 +17,7 @@ if(FULL_BUILD) {
     stage('Integration Tests') {
         node {
             echo 'Integration Tests'
+            sleep(5)
         }
     }
 }
@@ -26,6 +27,7 @@ if(FULL_BUILD) {
     stage('Static Analysis') {
         node {
             echo 'Static Analysis'
+            sleep(5)
         }
     }
 }
@@ -44,6 +46,7 @@ if(FULL_BUILD) {
     stage('Artifact Upload') {
         node {
           echo 'Artifact Upload'
+          sleep(5)
         }
     }
 }
