@@ -1,0 +1,57 @@
+#!groovy​
+
+// FULL_BUILD -> true/false build parameter to define if we need to run the entire stack for lab purpose only
+final FULL_BUILD = params.FULL_BUILD
+
+if(FULL_BUILD) {
+    stage('Unit Tests') {
+        node {
+            echo 'Unit Tests'
+        }
+    }
+}
+
+
+if(FULL_BUILD) {
+    stage('Integration Tests') {
+        node {
+            echo 'Integration Tests'
+        }
+    }
+}
+
+
+if(FULL_BUILD) {
+    stage('Static Analysis') {
+        node {
+            echo 'Static Analysis'
+        }
+    }
+}
+
+
+if(FULL_BUILD) {
+    stage('Approval') {
+        timeout(time:3, unit:'DAYS') {
+            input 'Do I have your approval for deployment?'
+        }
+    }
+}
+
+
+if(FULL_BUILD) {
+    stage('Artifact Upload') {
+        node {
+          echo 'Artifact Upload'
+        }
+    }
+}
+
+
+stage('Deploy') {
+    node {
+        ansiColor('xterm') {
+        ansibleTower credential: '', extraVars: '', importTowerLogs: true, importWorkflowChildLogs: false, inventory: '', jobTags: '', jobTemplate: 'azure rolling update demoapp', jobType: 'run', limit: '', removeColor: false, skipJobTags: '', templateType: 'job', throwExceptionWhenFail: false, towerServer: 'tower', verbose: false
+        }
+    }
+}
