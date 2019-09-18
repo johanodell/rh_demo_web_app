@@ -7,6 +7,7 @@ if(FULL_BUILD) {
     stage('Unit Tests') {
         node {
             echo 'Unit Tests'
+            sleep(45)
         }
     }
 }
