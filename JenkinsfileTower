@@ -3,7 +3,7 @@
 // FULL_BUILD -> true/false build parameter to define if we need to run the entire stack for lab purpose only
 final FULL_BUILD = params.FULL_BUILD
 
-if(FULL_BUILD) {
+if(true) {
     stage('Unit Tests') {
         node {
             echo 'Unit Tests'
@@ -13,7 +13,7 @@ if(FULL_BUILD) {
 }
 
 
-if(FULL_BUILD) {
+if(true) {
     stage('Integration Tests') {
         node {
             echo 'Integration Tests'
@@ -23,7 +23,7 @@ if(FULL_BUILD) {
 }
 
 
-if(FULL_BUILD) {
+if(true) {
     stage('Static Analysis') {
         node {
             echo 'Static Analysis'
@@ -33,7 +33,7 @@ if(FULL_BUILD) {
 }
 
 
-if(FULL_BUILD) {
+if(true) {
     stage('Approval') {
         timeout(time:3, unit:'DAYS') {
             input 'Do I have your approval for deployment?'
@@ -42,7 +42,7 @@ if(FULL_BUILD) {
 }
 
 
-if(FULL_BUILD) {
+if(true) {
     stage('Artifact Upload') {
         node {
           echo 'Artifact Upload'
