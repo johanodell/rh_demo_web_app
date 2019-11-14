@@ -55,7 +55,7 @@ if(FULL_BUILD) {
 stage('Deploy') {
     node {
         ansiColor('xterm') {
-        ansibleTower credential: '', extraVars: '', importTowerLogs: true, importWorkflowChildLogs: false, inventory: '', jobTags: '', jobTemplate: 'azure rolling update demoapp', jobType: 'run', limit: '', removeColor: false, skipJobTags: '', templateType: 'job', throwExceptionWhenFail: false, towerServer: 'tower', verbose: false
+        AnsibleTowerCreds credential: '', extraVars: '', importTowerLogs: true, importWorkflowChildLogs: false, inventory: '', jobTags: '', jobTemplate: 'azure rolling update demoapp', jobType: 'run', limit: '', removeColor: false, skipJobTags: '', templateType: 'job', throwExceptionWhenFail: false, towerServer: 'tower', verbose: false
         }
     }
 }
